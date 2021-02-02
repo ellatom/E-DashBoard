@@ -1,5 +1,5 @@
 ## Dashboard App
-Open https://pedantic-snyder-1013e8.netlify.app/ to view app in the browser.
+Open  https://pedantic-snyder-1013e8.netlify.app/ to view app in the browser.
 
 ### `Description:`
 <ul>
