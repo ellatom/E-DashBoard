@@ -1,0 +1,80 @@
+[
+    {
+        "trade_date": 1611675321,
+        "side": "BUY",
+        "product": "BTC-USD",
+        "quantity": 0.016,
+        "price": 1078.600,
+        "counterparty":"Cumberland",
+        "provider_price":0.226,
+        "sales_pl":0.000,
+        "type":"hedge",
+        "excecution":"Rest API",
+        "status":"active"
+    },
+    {
+        "trade_date": 1611682521,
+        "side": "SELL",
+        "product": "BTC-USD",
+        "quantity": 0.016,
+        "price": 1079.516,
+        "counterparty":"Coin flip DBA",
+        "provider_price":0.226,
+        "sales_pl":0.928,
+        "type":"Client",
+        "excecution":"Rest API",
+        "status":"active"
+    },
+    {
+        "trade_date": 1611678921,
+        "side": "SELL",
+        "product": "XRP-USD",
+        "quantity": 2.291,
+        "price": 34040.600,
+        "counterparty":"B2C2",
+        "provider_price":34055.000,
+        "sales_pl":0.000,
+        "type":"hedge",
+        "excecution":"Rest API",
+        "status":"active"
+    },
+    {
+        "trade_date": 1611675321,
+        "side": "BUY",
+        "product": "XRP-USD",
+        "quantity": 2.291,
+        "price": 34041.230,
+        "counterparty":"I trust DBA",
+        "provider_price":34057.128,
+        "sales_pl":0.928,
+        "type":"Client",
+        "excecution":"Rest API",
+        "status":"active"
+    },
+    {
+        "trade_date": 1611675321,
+        "side": "SELL",
+        "product": "XRP-USD",
+        "quantity": 2.291,
+        "price": 34041.230,
+        "counterparty":"I trust DBA",
+        "provider_price":34057.128,
+        "sales_pl":0.928,
+        "type":"Client",
+        "excecution":"Rest API",
+        "status":"active"
+    },
+    {
+        "trade_date": 1611675321,
+        "side": "SELL",
+        "product": "XRP-USD",
+        "quantity": 2.291,
+        "price": 34041.230,
+        "counterparty":"I trust DBA",
+        "provider_price":34057.128,
+        "sales_pl":0.928,
+        "type":"hedge",
+        "excecution":"Rest API",
+        "status":"active"
+    }
+]

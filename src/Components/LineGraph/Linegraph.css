@@ -1,0 +1,13 @@
+.line_graph_container{
+    width: 600px;
+    height: 100px;
+    line-height: 100px;
+}
+.bottom_container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.Component-root-26.Demo-chart-24{
+    height: 320px !important;
+}

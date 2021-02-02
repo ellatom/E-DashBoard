@@ -1,0 +1,32 @@
+[
+    {
+        "username": "Client_test_r",
+        "time": 1611684428,
+        "info": "Balance updated for settlement #2235"
+    },
+    {
+        "username": "Client_test_r",
+        "time": 1611682521,
+        "info": "New settlement #172"
+    },
+    {
+        "username": "Broker_test_r",
+        "time": 1611678921,
+        "info": "New settlement #171"
+    },
+    {
+        "username": "Orian_test",
+        "time": 1611675321,
+        "info": "OTC trade #431395"
+    },
+    {
+        "username": "Client_test_r",
+        "time": 1611675321,
+        "info": "New settlement #189"
+    },
+    {
+        "username": "Broker_test_r",
+        "time": 1611675321,
+        "info": "New settlement #1789 available"
+    }
+]

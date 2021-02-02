@@ -1,24 +1,16 @@
-import {keys}  from '../Data/config.js';
+import * as keys  from '../Data/config.js';
 
 //get keys/columns to display as columns in table
-const getKeys = () => {
-    return keys;
+const getKeys = (key) => {
+    return keys[key];
 }
 
-//get age by epoch birthdate
-const getAge =(birthdate)=> {
-
-    let ageDifMs = Date.now() - birthdate.getTime();
-    let ageDate = new Date(ageDifMs);
-    let age = Math.abs(ageDate.getUTCFullYear() - 1970);
-
-    return age;
-}
 //convert epoch to date
-const getBirthdate = (birthdate) => {
+const getTradeDate = (trade_date) => {
 
-    let utcSeconds = birthdate;
+    let utcSeconds = trade_date;
     let date = new Date(0);
+    //console.log(date);
     date.setUTCSeconds(utcSeconds);
 
     return date;
@@ -35,17 +27,16 @@ const setTitleValue=(key)=>
     return capitalizeFirstLetter(key).replace("_", " ");
 }
 
-//set birthdate and age by birthdate
-const setBirthdateAndAge=(obj,key,value)=>{
+//set date
+const setTradeDate=(obj,key,value)=>{
 
-    let date = getBirthdate(value);
+    let date = getTradeDate(value);
     obj[key] = date.toLocaleDateString();
-    obj["age"] = getAge(date);
     return obj;
 }
 //get data to display in table accordingly to required keys((columns)),age calculculted by birthdate
-const getFilteredDataByKeys = (tableData) => {
-    let keys = getKeys();
+const getFilteredDataByKeys = (tableData,key) => {
+    let keys = getKeys(key);
 
     let result =
         tableData.map(item => {
@@ -53,13 +44,10 @@ const getFilteredDataByKeys = (tableData) => {
 
             keys.forEach(key => {
 
-                if (key === "birthdate") {
-                    obj = setBirthdateAndAge(obj,key,item[key]);
+                if (key === "trade_date" || key === "time") {
+                    obj = setTradeDate(obj,key,item[key]);
                     return;
                 }
-
-                if (key === "age") {return;}
-
                 if (item.hasOwnProperty(key))
                     obj[key] = item[key];
             })
@@ -71,8 +59,8 @@ const getFilteredDataByKeys = (tableData) => {
 export default function utils() {
 	return {
         getKeys,
-		getAge,
-        getBirthdate,
+        getTradeDate,
+        setTradeDate,
         capitalizeFirstLetter,
         setTitleValue,
 		getFilteredDataByKeys

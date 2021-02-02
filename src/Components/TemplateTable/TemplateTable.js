@@ -2,26 +2,28 @@ import React, { Component } from 'react';
 import MaterialTable from "material-table";
 import utilsData from '../../Utilities/data-util-functions.js';
 import utilsOptions from '../../Utilities/table-options-util-function.js';
+import '../TemplateTable/TemplateTable.css'
+// const data = require('../../Data/trades_data.json');
 
-const data = require('../../Data/data.json');
 
-
-class EmployeeTable extends Component {
+class TradesTable extends Component {
 
     state = { tableData: [] };
 
     //set table data from json
     componentDidMount() {
+        const data = require(`../../Data/${this.props.data_file}`);
         this.setState({ tableData: data });
     }
     //set table title
-    getTitle = () => {
-        return "Employees";
+    getTitle = (title) => {
+        return  title;
     }
 
     //table headers 
-    getHeaders = () => {
-        let keys = utilsData().getKeys();
+    getHeaders = (key) => {
+        // let key = "trades_keys";
+        let keys = utilsData().getKeys(key);
 
         let headers = keys.map(key => {
             let titleValue = utilsData().setTitleValue(key);
@@ -34,23 +36,25 @@ class EmployeeTable extends Component {
     }
 
     //get table rows data
-    getRows = () => {
+    getRows = (key) => {
         const { tableData } = this.state;
-        let filteredData = utilsData().getFilteredDataByKeys(tableData);
+        // let key = "trades_keys";
+        let filteredData = utilsData().getFilteredDataByKeys(tableData,key);
 
         return filteredData;
     }
 
     render() {
+        const {title,table_key}= this.props
         return (
-            <MaterialTable
-                title={this.getTitle()}
-                columns={this.getHeaders()}
-                data={this.getRows()}
+            <MaterialTable 
+                title={this.getTitle(title)}
+                columns={this.getHeaders(table_key)}
+                data={this.getRows(table_key)}
                 options={utilsOptions().setOptions()}
             />
         );
     }
 
 }
-export default EmployeeTable;
+export default TradesTable;
