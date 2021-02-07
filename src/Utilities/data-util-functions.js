@@ -34,7 +34,7 @@ const setTradeDate=(obj,key,value)=>{
     obj[key] = date.toLocaleDateString();
     return obj;
 }
-//get data to display in table accordingly to required keys((columns)),age calculculted by birthdate
+//get data to display in table accordingly to required keys((columns))
 const getFilteredDataByKeys = (tableData,key) => {
     let keys = getKeys(key);
 
